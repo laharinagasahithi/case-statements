@@ -1,0 +1,30 @@
+declare
+grd char(1) := 'C';
+begin
+case grd
+when 'A' then dbms_output.put_line('your grade is outstanding');
+when 'B' then dbms_output.put_line('your grade is excellent');
+when 'C' then dbms_output.put_line('your grade is very good');
+when 'D' then dbms_output.put_line('your grade is average');
+when 'F' then dbms_output.put_line('your grade is poor');
+else
+dbms_output.put_line('no such grade is found');
+end case;
+end;
+
+
+--example2
+declare
+grd char(1) := 'L';
+begin
+case grd
+when 'A' then dbms_output.put_line('your grade is outstanding');
+when 'B' then dbms_output.put_line('your grade is excellent');
+when 'C' then dbms_output.put_line('your grade is very good');
+when 'D' then dbms_output.put_line('your grade is average');
+when 'F' then dbms_output.put_line('your grade is poor');
+end case;
+exception
+when case_not_found then
+dbms_output.put_line('no such grade is found');
+end;
